@@ -1,5 +1,5 @@
 export class User {
-  firstName: string;
-  lastName: string;
-  email: string;
+  latitude: string;
+  longitude: string;
+  idDispositivo: string;
 }

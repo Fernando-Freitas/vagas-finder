@@ -1,13 +1,21 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS vaga;
 
-CREATE TABLE users (
+CREATE TABLE vaga (
   id INT PRIMARY KEY,
-  FIRST_NAME VARCHAR(250) NOT NULL,
-  LAST_NAME VARCHAR(250) NOT NULL,
-  EMAIL VARCHAR(250) NOT NULL
+  latitude VARCHAR(250) NOT NULL,
+  longitude VARCHAR(250) NOT NULL,
+  id_dispositivo VARCHAR(250) NOT NULL
 );
 
-INSERT INTO users (ID, FIRST_NAME, LAST_NAME, EMAIL) VALUES
-  (1, 'first', 'last 1', 'abc1@gmail.com'),
-  (2, 'sec', 'last 2', 'abc2@gmail.com'),
-  (3, 'trd', 'last 3', 'abc3@gmail.com');
+INSERT INTO vaga (id, latitude, longitude, id_dispositivo) VALUES
+  (1, '32156', '23424', '87fb603c6e17'),
+  (2, '32148', '23424', '87fb603c6e17'),
+  (3, '78498', '24532', '54tc789c6r54');
+  
+DROP TABLE IF EXISTS dispositivo;
+
+CREATE TABLE dispositivo (
+  id INT PRIMARY KEY,
+  latitude VARCHAR(250) NOT NULL,
+  longitude VARCHAR(250) NOT NULL
+);

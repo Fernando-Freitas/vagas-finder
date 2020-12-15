@@ -1,20 +1,20 @@
 <div class="container">
-  <h2>Users</h2>
+  <h2>Cadastradas</h2>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>User Id</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>Id vaga</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Dispositivo respons&aacute;vel</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of users; let i = index">
         <td>{{i + 1}}</td>
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.email}}</td>
+        <td>{{user.latitude}}</td>
+        <td>{{user.longitude}}</td>
+        <td>{{user.idDispositivo}}</td>
       </tr>
     </tbody>
   </table>

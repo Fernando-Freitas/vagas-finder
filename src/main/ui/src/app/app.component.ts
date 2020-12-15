@@ -13,12 +13,12 @@ export class AppComponent implements OnDestroy {
 
   constructor(private appService: AppService) {}
 
-  title = 'angular-nodejs-example';
+  title = 'vagas@finder';
 
   userForm = new FormGroup({
-    firstName: new FormControl('', Validators.nullValidator && Validators.required),
-    lastName: new FormControl('', Validators.nullValidator && Validators.required),
-    email: new FormControl('', Validators.nullValidator && Validators.required)
+    latitude: new FormControl('', Validators.nullValidator && Validators.required),
+    longitude: new FormControl('', Validators.nullValidator && Validators.required),
+    idDispositivo: new FormControl('', Validators.nullValidator && Validators.required)
   });
 
   users: any[] = [];

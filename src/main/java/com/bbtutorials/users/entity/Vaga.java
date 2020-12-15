@@ -10,22 +10,22 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Users {
+public class Vaga {
 	
 	@Id
 	@Column
     private long id;
 
     @Column
-    @NotNull(message="{NotNull.User.firstName}")
-    private String firstName;
+    @NotNull(message="{NotNull.Vaga.latitude}")
+    private String latitude;
     
     @Column
-    @NotNull(message="{NotNull.User.lastName}")
-    private String lastName;
+    @NotNull(message="{NotNull.Vaga.longitude}")
+    private String longitude;
     
     @Column
-    @NotNull(message="{NotNull.User.email}")
-    private String email;
+    @NotNull(message="{NotNull.Vaga.idDispositivo}")
+    private String idDispositivo;
 
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bbtutorials.users.entity.Users;
+import com.bbtutorials.users.entity.Vaga;
 import com.bbtutorials.users.links.UserLinks;
 import com.bbtutorials.users.service.UsersService;
 
@@ -26,13 +26,13 @@ public class UsersController {
 	
 	@GetMapping(path = UserLinks.LIST_USERS)
     public ResponseEntity<?> listUsers() {
-        List<Users> resource = usersService.getUsers();
+        List<Vaga> resource = usersService.getUsers();
         return ResponseEntity.ok(resource);
     }
 	
 	@PostMapping(path = UserLinks.ADD_USER)
-	public ResponseEntity<?> saveUser(@RequestBody Users user) {
-        Users resource = usersService.saveUser(user);
+	public ResponseEntity<?> saveUser(@RequestBody Vaga user) {
+        Vaga resource = usersService.saveUser(user);
         return ResponseEntity.ok(resource);
     }
 }

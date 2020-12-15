@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.bbtutorials.users.entity.Users;
+import com.bbtutorials.users.entity.Vaga;
 import com.bbtutorials.users.repository.UsersRepository;
 
 @Component
@@ -16,11 +16,11 @@ public class UsersService {
         this.usersRepository = usersRepository;
     }
 
-    public List<Users> getUsers() {
+    public List<Vaga> getUsers() {
         return usersRepository.findAll();
     }
     
-    public Users saveUser(Users users) {
+    public Vaga saveUser(Vaga users) {
     	return usersRepository.save(users);
     }
 

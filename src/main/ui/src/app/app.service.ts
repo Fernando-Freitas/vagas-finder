@@ -14,9 +14,9 @@ export class AppService {
     return this.http.get(this.rootURL + '/users');
   }
 
-  addUser(user: any, id: number) {
-	user.id = id;
-	return this.http.post(this.rootURL + '/user', user);
+  addUser(vaga: any, id: number) {
+	vaga.id = id;
+	return this.http.post(this.rootURL + '/user', vaga);
   }
 
 }
