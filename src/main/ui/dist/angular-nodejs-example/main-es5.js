@@ -214,7 +214,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onSubmit() {
           var _this = this;
 
-          this.appService.addUser(this.userForm.value).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.destroy$)).subscribe(function (data) {
+          this.appService.addUser(this.userForm.value, this.userCount + 1).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.destroy$)).subscribe(function (data) {
             console.log('message::::', data);
             _this.userCount = _this.userCount + 1;
             console.log(_this.userCount);
@@ -228,6 +228,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this2 = this;
 
           this.appService.getUsers().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.destroy$)).subscribe(function (users) {
+            _this2.userCount = users.length;
             _this2.users = users;
           });
         }
@@ -236,6 +237,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnDestroy() {
           this.destroy$.next(true);
           this.destroy$.unsubscribe();
+        }
+      }, {
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.getAllUsers();
         }
       }]);
 
@@ -567,10 +573,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "addUser",
-        value: function addUser(user) {
-          return this.http.post(this.rootURL + '/user', {
-            user: user
-          });
+        value: function addUser(user, id) {
+          user.id = id;
+          return this.http.post(this.rootURL + '/user', user);
         }
       }]);
 
@@ -792,7 +797,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Angular With NodeJS");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Angular With Java");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1116,7 +1121,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! /Users/bhargavbachina/Projects/angular-nodejs-example/my-app/src/main.ts */
+    /*! C:\Users\FernandoP\git\angular-java-example\src\main\ui\src\main.ts */
     "./src/main.ts");
     /***/
   }
